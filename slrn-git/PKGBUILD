@@ -11,7 +11,7 @@ depends=('slang-git' 'uudeview')
 makedepends=('git')
 provides=('slrn')
 conflicts=('slrn')
-backup=(etc/slrnrc)
+backup=('etc/slrnrc')
 
 _gitroot='git://git.jedsoft.org/git/slrn.git'
 _gitname='slrn'

@@ -1,18 +1,18 @@
 # Maintainer: Bastien Dejean <baskerville at lavabit.com>
 
-pkgname=bspwm-git
-pkgver=20121108
+pkgname=shkd-git
+pkgver=20121111
 pkgrel=1
-pkgdesc='A tiling window manager based on binary space partitioning'
+pkgdesc='A simple hotkey daemon'
 arch=('i686' 'x86_64')
-url="https://github.com/baskerville/bspwm"
+url="https://github.com/baskerville/shkd"
 license=('BSD')
-depends=('libxcb' 'xcb-util' 'xcb-util-wm')
-makedepends=('git')
-provides=('bspwm')
-conflicts=('bspwm')
-_gitroot='git://github.com/baskerville/bspwm.git'
-_gitname='bspwm'
+makedepends=('git' 'linux-api-headers')
+provides=('shkd')
+conflicts=('shkd')
+backup=('etc/shkdrc')
+_gitroot='git://github.com/baskerville/shkd.git'
+_gitname='shkd'
 
 build() {
     cd "$srcdir"
