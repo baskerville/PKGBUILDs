@@ -3,9 +3,9 @@
 pkgname=sres-git
 pkgver=20120726
 pkgrel=1
-pkgdesc="Print the current screen resolution on stdout"
+pkgdesc='Print the current screen resolution on stdout'
 arch=('any')
-url="https://github.com/baskerville/sres"
+url='https://github.com/baskerville/sres'
 license=('BSD')
 depends=('gcc' 'libx11')
 makedepends=('git')

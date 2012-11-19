@@ -6,13 +6,12 @@ pkgver=20120924
 pkgrel=1
 pkgdesc='Free Software LHA implementation'
 arch=('i686' 'x86_64')
-url="http://fragglet.github.com/lhasa/"
+url='http://fragglet.github.com/lhasa/'
 license=('ISC')
 depends=()
 makedepends=('git')
 conflicts=('lhasa' 'lha')
 provides=('lhasa' 'lha')
-
 _gitroot='git://github.com/fragglet/lhasa.git'
 _gitname='lhasa'
 
@@ -36,5 +35,3 @@ package() {
     cd "$srcdir/$_gitname-build"
     make DESTDIR="$pkgdir" install
 }
-
-# vim: ft=sh syn=sh et
