@@ -1,0 +1,20 @@
+pkgname=lemon
+pkgrel=3
+pkgver=1.69
+pkgdesc='LALR parser generator'
+arch=('i686' 'x86_64')
+url='http://www.hwaci.com/sw/lemon/'
+license=('custom')
+provides=('lemon')
+conflicts=('lemon')
+source=('lemon.c::http://www.sqlite.org/src/raw/tool/lemon.c?name=680980c7935bfa1edec20c804c9e5ba4b1dd96f5' 'lempar.c::http://www.sqlite.org/src/raw/tool/lempar.c?name=01ca97f87610d1dac6d8cd96ab109ab1130e76dc')
+md5sums=('1e13360f66009275f2e78816911a1ed7' 'fbf6255b88d54cf284c833da0d9ee5d2')
+
+build() {
+    make lemon
+}
+
+package() {
+    install -Dm755 lemon "$pkgdir/usr/bin/lemon"
+    install -Dm644 lempar.c "$pkgdir/usr/share/lemon/lempar.c"
+}
