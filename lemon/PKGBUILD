@@ -11,10 +11,12 @@ source=('lemon.c::http://www.sqlite.org/src/raw/tool/lemon.c?name=680980c7935bfa
 md5sums=('1e13360f66009275f2e78816911a1ed7' 'fbf6255b88d54cf284c833da0d9ee5d2')
 
 build() {
+    cd "$srcdir"
     make lemon
 }
 
 package() {
+    cd "$srcdir"
     install -Dm755 lemon "$pkgdir/usr/bin/lemon"
     install -Dm644 lempar.c "$pkgdir/usr/share/lemon/lempar.c"
 }
