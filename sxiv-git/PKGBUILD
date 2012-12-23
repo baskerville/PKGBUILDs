@@ -32,7 +32,7 @@ build() {
     cd "$srcdir/${_gitname}-build"
 
     if [ -e "$startdir"/config.h ] ; then
-        msg "using custom config.h"
+        msg "Using custom config.h"
         cp -t . "$startdir"/config.h
     fi
     make PREFIX=/usr
