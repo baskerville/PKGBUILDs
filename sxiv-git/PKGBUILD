@@ -1,0 +1,46 @@
+# Maintainer: Army <uli.armbruster @t gmail>
+# Contributor: Bastien Dejean <baskerville@lavabit.com>
+
+pkgname=sxiv-git
+pkgver=20121223
+pkgrel=1
+pkgdesc='A simple X image viewer'
+arch=('i686' 'x86_64')
+license=('GPLv2')
+url='https://github.com/muennich/sxiv'
+depends=('imlib2' 'giflib')
+makedepends=('git')
+optdepends=('imagemagick: for the example commands in config.def.h'
+            'libjpeg-turbo: for the example commands in config.def.h'
+            'gimp: for the example commands in config.def.h')
+conflicts=('sxiv')
+provides=('sxiv')
+
+_gitroot='https://github.com/muennich/sxiv.git'
+_gitname='sxiv'
+
+build() {
+    cd "$srcdir"
+    if [ -d "$_gitname" ] ; then
+        cd "$_gitname" && git pull
+    else
+        git clone "$_gitroot" "$_gitname"
+    fi
+
+    rm -rf "$srcdir/${_gitname}-build"
+    git clone "$srcdir/$_gitname" "$srcdir/${_gitname}-build"
+    cd "$srcdir/${_gitname}-build"
+
+    if [ -e "$startdir"/config.h ] ; then
+        msg "using custom config.h"
+        cp -t . "$startdir"/config.h
+    fi
+    make PREFIX=/usr
+}
+
+package() {
+    cd "$srcdir/${_gitname}-build"
+    make PREFIX=/usr DESTDIR="$pkgdir" install
+    install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -D -m644 sxiv.desktop "${pkgdir}/usr/share/applications/sxiv.desktop"
+}
