@@ -1,12 +1,12 @@
 # Maintainer: Bastien Dejean <baskerville@lavabit.com>
 
 pkgname=bspwm-git
-pkgver=20121108
+pkgver=20130106
 pkgrel=1
 pkgdesc='A tiling window manager based on binary space partitioning'
 arch=('i686' 'x86_64')
 url='https://github.com/baskerville/bspwm'
-license=('BSD')
+license=('custom:BSD')
 depends=('libxcb' 'xcb-util' 'xcb-util-wm' 'xcb-util-keysyms')
 makedepends=('git')
 provides=('bspwm')
