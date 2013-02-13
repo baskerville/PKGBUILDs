@@ -1,18 +1,18 @@
 # Maintainer: Bastien Dejean <baskerville@lavabit.com>
 
-pkgname=sres-git
-pkgver=20130209
+pkgname=xlsw-git
+pkgver=20130130
 pkgrel=1
-pkgdesc='Print the current screen resolution'
+pkgdesc='List the X window tree contents'
 arch=('i686' 'x86_64')
-url='https://github.com/baskerville/sres'
+url='https://github.com/baskerville/xlsw'
 license=('custom:Unlicense')
-depends=('libxcb')
+depends=('libxcb' 'xcb-util-wm')
 makedepends=('git')
-provides=('sres')
-conflicts=('sres')
-_gitroot='git://github.com/baskerville/sres.git'
-_gitname='sres'
+provides=('xlsw')
+conflicts=('xlsw')
+_gitroot='git://github.com/baskerville/xlsw.git'
+_gitname='xlsw'
 
 build() {
     cd "$srcdir"
