@@ -15,7 +15,7 @@ md5sums=('ba52602a551a59692499b98d2870051e')
 
 build() {
     cd "$srcdir/${pkgname}-${pkgver}"
-    make clean && make PREFIX=/usr
+    make PREFIX=/usr
 }
 
 package() {
