@@ -5,7 +5,7 @@ pkgname=${_pkgname}-git
 pkgver=0.3.40.g6531093
 pkgrel=2
 pkgdesc='A pacman and cower wrapper focused on simplicity'
-arch=('any')
+arch=('i686' 'x86_64')
 url="https://github.com/baskerville/${_pkgname}"
 license=('custom:BSD')
 depends=('sudo' 'dash' 'cower' 'abs')
@@ -17,7 +17,7 @@ md5sums=('SKIP')
 
 pkgver() {
     cd "$srcdir/$_pkgname"
-    git describe --always | cut -c 2- | tr '-' '.'
+    git describe --always | tr '-' '.'
 }
 
 package() {

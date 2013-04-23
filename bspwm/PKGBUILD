@@ -10,7 +10,7 @@ license=('custom:BSD')
 depends=('libxcb' 'xcb-util' 'xcb-util-wm')
 provides=('bspwm')
 conflicts=('bspwm')
-source=("https://github.com/baskerville/${pkgname}/archive/v${pkgver}.tar.gz")
+source=("https://github.com/baskerville/${pkgname}/archive/${pkgver}.tar.gz")
 md5sums=('d26de48c0832db52327712cbca1067e4')
 
 build() {
