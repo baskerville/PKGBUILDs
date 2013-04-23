@@ -8,7 +8,7 @@ arch=('i686' 'x86_64')
 url='http://mpop.sourceforge.net/'
 license=('GPL3')
 depends=('gnutls' 'libidn')
-makedepends=('git' 'autoconf' 'pkg-config')
+makedepends=('git' 'autoconf' 'libtool' 'pkg-config')
 provide=('mpop')
 conflicts=('mpop')
 install=mpop.install
@@ -24,6 +24,7 @@ build() {
     fi
 
     cd "$srcdir/$_gitname"
+    libtoolize
     autoreconf -i
     ./configure --prefix=/usr --with-ssl=gnutls
     make
