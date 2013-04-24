@@ -13,7 +13,7 @@ makedepends=('pkgconfig' 'mercurial')
 provides=("${_pkgname}")
 conflicts=("${_pkgname}")
 backup=('etc/Muttrc')
-source=("hg+http://dev.${_pkgname}.org/hg/${_pkgname}#HEAD" 'mutt_bool.patch')
+source=("hg+http://dev.${_pkgname}.org/hg/${_pkgname}#branch=HEAD" 'mutt_bool.patch')
 md5sums=('SKIP' '3c8c5e060972e83488867b609686cf2f')
 
 prepare() {
