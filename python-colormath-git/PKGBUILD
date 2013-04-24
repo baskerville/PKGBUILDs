@@ -2,7 +2,7 @@
 
 _pkgname=python-colormath
 pkgname=${_pkgname}-git
-pkgver=fcd078
+pkgver=3fcd078
 pkgrel=1
 pkgdesc='A Python module that abstracts common color math operations'
 arch=('any')
