@@ -2,7 +2,7 @@
 
 _pkgname=backlight
 pkgname=${_pkgname}-git
-pkgver=20130319
+pkgver=cd66f35
 pkgrel=1
 pkgdesc='Get and set backlight brightness'
 arch=('i686' 'x86_64')

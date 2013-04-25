@@ -1,8 +1,8 @@
 # Maintainer: Bastien Dejean <baskerville@lavabit.com>
 
-_pkgname=fontforge-bskv
-pkgname=${_pkgname}-git
-pkgver=20130405
+_pkgname=fontforge
+pkgname=${_pkgname}-bskv-git
+pkgver=v20120731.b.6969.g64fe21c
 ftver=2.4.11
 pkgrel=1
 pkgdesc='An outline and bitmap font editor'
@@ -15,6 +15,11 @@ conflicts=('fontforge')
 provides=('fontforge')
 source=("git://github.com/fontforge/${_pkgname}.git" "http://downloads.sourceforge.net/project/freetype/freetype2/${ftver}/freetype-${ftver}.tar.bz2")
 md5sums=('SKIP' 'b93435488942486c8d0ca22e8f768034')
+
+pkgver() {
+    cd "$srcdir/$_pkgname"
+    git describe --always | tr '-' '.'
+}
 
 build() {
     cd "$srcdir/$_pkgname"
