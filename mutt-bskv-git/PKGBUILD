@@ -1,8 +1,8 @@
 # Maintainer: Bastien Dejean <baskerville at lavabit dot com>
 
 _pkgname=mutt
-pkgname=${_pkgname}-bare-hg
-pkgver=6305.d3096e8796e7
+pkgname=${_pkgname}-bskv-hg
+pkgver=5647.d3096e8796e7
 pkgrel=1
 pkgdesc='Mutt with S-Lang and without built-in POP/SMTP/IMAP/SSL'
 url='http://www.mutt.org/'
