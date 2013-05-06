@@ -1,33 +1,33 @@
 # Maintainer: Bastien Dejean <baskerville@lavabit.com>
 
-pkgname=md2man-git
-pkgver=20121208
+_pkgname=md2man
+pkgname=${_pkgname}-git
+pkgver=v1.6.2z7zg3eef75e
 pkgrel=1
 pkgdesc="Markdown to manpage converter"
 arch=('i686' 'x86_64')
 url="https://github.com/sunaku/md2man"
-license=('ISC')
+license=('custom:ISC')
 depends=('ruby')
 makedepends=('git')
-provides=('md2man')
-conflicts=('md2man')
-_gitroot='git://github.com/sunaku/md2man.git'
-_gitname='md2man'
+provides=("${_pkgname}")
+conflicts=("${_pkgname}")
+source=("git://github.com/sunaku/${_pkgname}.git")
+md5sums=('SKIP')
+
+pkgver() {
+    cd "$srcdir/$_pkgname"
+    git describe --always | tr '-' 'z'
+}
 
 build() {
-    cd "$srcdir"
-    if [ -d "$_gitname" ] ; then
-        cd "$_gitname" && git pull origin
-    else
-        git clone "$_gitroot" "$_gitname"
-    fi
-    cd "$srcdir/$_gitname"
-    gem build $_gitname.gemspec
+    cd "$srcdir/$_pkgname"
+    gem build "${_pkgname}.gemspec"
 }
 
 package() {
-    cd "$srcdir/$_gitname"
+    cd "$srcdir/$_pkgname"
     local gemdir=$(ruby -e 'puts Gem.default_dir')
-    gem install --ignore-dependencies -i "$pkgdir$gemdir" -n "$pkgdir/usr/bin" *.gem
+    gem install --no-user-install --ignore-dependencies -i "$pkgdir$gemdir" -n "$pkgdir/usr/bin" *.gem
     install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }

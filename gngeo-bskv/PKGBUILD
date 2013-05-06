@@ -1,15 +1,15 @@
 # Maintainer: Bastien Dejean <baskerville@lavabit.com>
 
-pkgname=gngeo-bare
 _pkgname=gngeo
+pkgname=${_pkgname}-bskv
 pkgver=0.8
 pkgrel=1
 pkgdesc='A CLI Neo Geo Emulator'
-url='http://gngeo.googlecode.com'
+url="http://${_pkgname}.googlecode.com"
 license='custom'
 depends=('zlib' 'sdl')
-provides=('gngeo')
-conflicts=('gngeo')
+provides=("${_pkgname}")
+conflicts=("${_pkgname}")
 arch=('i686' 'x86_64')
 source=("${url}/files/${_pkgname}-${pkgver}.tar.gz")
 md5sums=('21055885694e9f6cdbaa20be069a4258')
@@ -23,7 +23,7 @@ build() {
 
 package() {
     cd "${srcdir}/${_pkgname}-${pkgver}"
-    make DESTDIR="${pkgdir}" install
+    make DESTDIR="$pkgdir" install
     install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${_pkgname}/COPYING"
     install -D -m644 sample_gngeorc "${pkgdir}/usr/share/doc/${_pkgname}/gngeorc"
 }
