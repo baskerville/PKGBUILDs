@@ -3,7 +3,7 @@
 _pkgname=bspwm
 pkgname=${_pkgname}-git
 pkgver=0.6z29zg7896973
-pkgrel=1
+pkgrel=2
 pkgdesc='A tiling window manager based on binary space partitioning'
 arch=('i686' 'x86_64')
 url="https://github.com/baskerville/${_pkgname}"
