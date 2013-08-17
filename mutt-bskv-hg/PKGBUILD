@@ -1,4 +1,4 @@
-# Maintainer: Bastien Dejean <baskerville at lavabit dot com>
+# Maintainer: Bastien Dejean <nihilhill@gmail.com>
 
 _pkgname=mutt
 pkgname=${_pkgname}-bskv-hg

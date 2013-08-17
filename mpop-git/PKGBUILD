@@ -1,4 +1,4 @@
-# Maintainer: Bastien Dejean <baskerville at lavabit dot com>
+# Maintainer: Bastien Dejean <nihilhill@gmail.com>
 
 _pkgname=mpop
 pkgname=${_pkgname}-git
