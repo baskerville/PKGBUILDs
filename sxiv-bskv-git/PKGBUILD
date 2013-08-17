@@ -1,4 +1,4 @@
-# Maintainer: Bastien Dejean <baskerville@lavabit.com>
+# Maintainer: Bastien Dejean <nihilhill@gmail.com>
 
 _pkgname=sxiv
 pkgname=${_pkgname}-bskv-git

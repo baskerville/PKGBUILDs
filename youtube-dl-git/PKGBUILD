@@ -1,8 +1,8 @@
-# Maintainer: Bastien Dejean <baskerville@lavabit.com>
+# Maintainer: Bastien Dejean <nihilhill@gmail.com>
 
 _pkgname=youtube-dl
 pkgname=${_pkgname}-git
-pkgver=1706
+pkgver=1897
 pkgrel=1
 pkgdesc='Small command-line program to download videos from YouTube.com and other video sites'
 arch=('i686' 'x86_64')
