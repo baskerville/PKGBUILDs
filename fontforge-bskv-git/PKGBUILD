@@ -2,8 +2,8 @@
 
 _pkgname=fontforge
 pkgname=${_pkgname}-bskv-git
-pkgver=15021
-ftver=2.4.11
+pkgver=15676
+ftver=2.5.1
 pkgrel=1
 pkgdesc='An outline and bitmap font editor'
 arch=('i686' 'x86_64')
@@ -14,7 +14,8 @@ optdepends=('libpng' 'libtiff' 'giflib' 'libjpeg' 'libxml2' 'libspiro' 'libunico
 conflicts=('fontforge')
 provides=('fontforge')
 source=("git://github.com/fontforge/${_pkgname}.git" "http://downloads.sourceforge.net/project/freetype/freetype2/${ftver}/freetype-${ftver}.tar.bz2")
-md5sums=('SKIP' 'b93435488942486c8d0ca22e8f768034')
+md5sums=('SKIP'
+         '93eba7854094f46d7d98a9a2370af4d6')
 
 pkgver() {
     cd "$srcdir/$_pkgname"
