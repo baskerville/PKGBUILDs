@@ -1,9 +1,9 @@
 # Maintainer: Bastien Dejean <nihilhill@gmail.com>
 
-_pkgname=owl
+_pkgname=owlman
 pkgname=${_pkgname}-git
-pkgver=163
-pkgrel=2
+pkgver=168
+pkgrel=1
 pkgdesc='A pacman and cower wrapper focused on simplicity'
 arch=('i686' 'x86_64' 'armv7f' 'armv6h')
 url="https://github.com/baskerville/${_pkgname}"
@@ -23,7 +23,7 @@ pkgver() {
 package() {
     cd "$srcdir/$_pkgname"
     mkdir -p "$pkgdir"/{usr/bin,etc/bash_completion.d,usr/share/man/man8}
-    cp owl owl_* "$pkgdir/usr/bin"
+    cp owlman owlman_* "$pkgdir/usr/bin"
     cp bash_completion.d/* "$pkgdir/etc/bash_completion.d"
-    cp owl.8 "$pkgdir/usr/share/man/man8"
+    cp owlman.8 "$pkgdir/usr/share/man/man8"
 }
