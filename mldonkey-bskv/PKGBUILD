@@ -1,3 +1,5 @@
+# Maintainer: Bastien Dejean <nihilhill@gmail.com>
+
 _pkgname=mldonkey
 pkgname=${_pkgname}-bskv
 pkgver=3.1.3
