@@ -2,7 +2,7 @@
 
 _pkgname=fontforge
 pkgname=${_pkgname}-bskv-git
-pkgver=15676
+pkgver=15701
 ftver=2.5.1
 pkgrel=1
 pkgdesc='An outline and bitmap font editor'
